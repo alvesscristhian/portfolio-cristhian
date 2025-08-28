@@ -96,6 +96,8 @@ img {
 
 .main-info {
     max-width: 55rem;
+    animation-name: slidein;
+    animation-duration: 1.5s;
 
 }
 
@@ -127,14 +129,32 @@ img {
     border-radius: 100%;
     object-fit: cover;
 }
+
 .social-button {
     display: flex;
     gap: 1.8rem;
 }
+
 .social-button img {
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--title);
     width: 2rem;
     height: auto;
+}
+
+.social-button img:hover {
+    background-color: var(--btn);
+    transition: ease-in-out 300ms;
+}
+
+/* ------- KEYFRAMES ------- */
+@keyframes slidein {
+    from {
+        margin-left: -100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
 }
