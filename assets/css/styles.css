@@ -190,20 +190,23 @@ main {
 
 .first-info {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     text-align: center;
 }
 
-.grid-about h2 {
+.first-info h2 {
     text-align: center;
     font-size: 4.5rem;
+    width: 65%;
+    border-bottom: 0.2rem solid var(--primary-color);
 }
 
 .grid-about p {
-    font-size: 2.3rem;
-    line-height: 3rem;
-    word-spacing: 0.1rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 /* ------- WORKS SECTION ------- */
@@ -224,37 +227,38 @@ main {
     margin: 7rem 0 10rem 0;
 }
 
-.project-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.grid-works {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+}
+.cards {
+    border: #16161a solid 0.1rem;
+    background-color: #16161a;
+    max-height: 40rem;
+    max-width: 50rem;
+    border-radius: 1.5rem;
 }
 
-.photo-works {
-    width: 70rem;
-    height: 45rem;
-    border: 0.2rem solid var(--primary-color);
-}
-.back {
-    margin-right: 4rem;
-}
-.next {
-    margin-left: 4rem;
-}
-.back, .next {
-    font-weight: bold;
-    font-size: 3.5rem;
-    height: 3rem;
-    width: 3rem;
-    cursor: pointer;
-    border: none;
-    background-color: var(--light-mode);
+.cards h3 {
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: 500;
 }
 
-.back:hover, .next:hover {
-    color: var(--primary-color);
-    transition: ease-in-out 0.3s;
+.cards img {
+    height: 65%;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
 }
+.stacks {
+    padding: 1rem;
+    color: #fff;
+}
+
 /* ------- KEYFRAMES ------- */
 @keyframes fadein {
     from {
