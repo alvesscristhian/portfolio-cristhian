@@ -279,6 +279,36 @@ main {
     width: 7rem;
 }
 
+/* ------- CONTACT SECTION ------- */
+
+#contact {
+    height: 90vh;
+}
+.contact-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 7rem;
+}
+
+.contact-content h2 {
+    font-size: 4.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.2rem solid var(--primary-color);
+    text-align: center;
+    width: 100%;
+    margin: 0 0 5rem 0;
+}
+
+.contact-content h3 {
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+
+
 /* ------- KEYFRAMES ------- */
 @keyframes fadein {
     from {
