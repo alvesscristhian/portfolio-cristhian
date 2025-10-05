@@ -19,18 +19,26 @@ toggleButton.addEventListener("click", () => {
 });
 
 const cards = document.querySelectorAll(".cards");
-cards.forEach(card => {
-  card.addEventListener('mouseenter', e => {
-    switch (e.target.id) {
-      case "landing-salao":
-        document.querySelector('#link-salao').style.opacity = 1;
-        break;
-      case "cadastro-alunos":
-        document.querySelector('#link-avaliacao').style.opacity = 1;
-        break;
-      case "valida-form":
-        document.querySelector('#link-valida').style.opacity = 1;
-        break;
-    }
+if (window.matchMedia("(width > 1024px)")) {
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', e => {
+      switch (e.target.id) {
+        case "landing-salao":
+          document.querySelector('#link-salao').style.opacity = 1;
+          document.querySelector('#link-avaliacao').style.opacity = 0;
+          document.querySelector('#link-valida').style.opacity = 0;
+          break;
+        case "cadastro-alunos":
+          document.querySelector('#link-avaliacao').style.opacity = 1;
+          document.querySelector('#link-salao').style.opacity = 0;
+          document.querySelector('#link-valida').style.opacity = 0;
+          break;
+        case "valida-form":
+          document.querySelector('#link-valida').style.opacity = 1;
+          document.querySelector('#link-avaliacao').style.opacity = 0;
+          document.querySelector('#link-salao').style.opacity = 0;
+          break;
+      }
+    });
   });
-});
+}
