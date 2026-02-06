@@ -278,10 +278,10 @@ main {
 }
 
 .cards img {
-    height: auto;
-    object-fit: cover;
-    max-width: 100%;
+    height: 18rem;
+    width: 100%;
 }
+
 
 .cards a {
     position: absolute;
@@ -408,6 +408,28 @@ form button:hover {
     transform: scale(1.03);
 }
 
+/* ------- FOOTER SECTION ------- */
+
+.footer {
+    background-color: #0f0f0f;
+    color: #fff;
+    padding-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.footer-bottom {
+    display: inline;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color: #0b0b0b;
+}
+
+
 /* ------- KEYFRAMES / ANIMATIONS ------- */
 @keyframes fadein {
     from {
@@ -434,7 +456,10 @@ form button:hover {
     transition: ease-in-out 0.7s;
     box-shadow: inset 70px 70px 1000px var(--primary-color);
 }
-#link-salao, #link-avaliacao, #link-valida {
+
+#link-salao,
+#link-avaliacao,
+#link-valida {
     transition: ease-in-out 0.3s;
 }
 
@@ -455,7 +480,9 @@ form button:hover {
         max-height: 100%;
     }
 
-    #link-salao, #link-avaliacao, #link-valida {
+    #link-salao,
+    #link-avaliacao,
+    #link-valida {
         position: relative;
         opacity: 1;
     }
@@ -493,6 +520,7 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
+
     html {
         font-size: 55%;
     }
@@ -522,6 +550,14 @@ form button:hover {
 
     .contact-content h2 {
         font-size: 3.5rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 }
 
