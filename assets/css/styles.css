@@ -3,6 +3,10 @@
     --paragraph: #94a1b2;
     --primary-color: #7f5af0;
     --light-mode: #f5f5f5;
+    
+    /* Novas variáveis dinâmicas para o tema */
+    --bg-color: #f5f5f5;
+    --text-color: #111;
 }
 
 /* RESET */
@@ -12,16 +16,17 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--light-mode);
-    color: #111;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/* Quando o dark-mode estiver ativo, as variáveis mudam de valor */
+body.dark-mode {
+    --bg-color: #111;
+    --text-color: #f5f5f5;
 }
 
-body.dark-mode {
-    background-color: #111;
-    color: #f5f5f5;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header.menu.dark-mode {
@@ -63,6 +68,7 @@ section {
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     z-index: 99;
+    transition: background-color 0.3s;
 }
 
 .menu img {
@@ -186,7 +192,8 @@ main {
     display: flex;
     justify-content: center;
     padding: 6rem 2rem;
-    background-color: var(--light-mode);
+    background-color: var(--bg-color); /* Atualizado */
+    transition: background-color 0.3s;
 }
 
 .grid-about {
@@ -231,7 +238,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--light-mode);
+    background-color: var(--bg-color); /* Atualizado */
+    transition: background-color 0.3s;
     padding: 6rem 2rem;
 }
 
@@ -283,12 +291,13 @@ main {
     height: 18rem;
     width: 100%;
     object-fit: cover;
+    transition: filter 0.4s ease-in-out; /* Adicionado para efeito hover */
 }
 
 /* Estilo do botão unificado via CSS */
 .cards .btn-visit {
     position: absolute;
-    top: 50%;
+    top: 9rem; /* Atualizado para ficar centralizado na imagem */
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
     color: var(--title);
@@ -311,6 +320,10 @@ main {
 .cards:hover .btn-visit {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.cards:hover img {
+    filter: brightness(0.4); /* Escurece a imagem no hover para o botão se destacar */
 }
 
 .stacks {
@@ -346,7 +359,8 @@ main {
 #contact {
     min-height: 100vh;
     padding: 6rem 2rem;
-    background: var(--light-mode);
+    background: var(--bg-color); /* Atualizado */
+    transition: background-color 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -395,7 +409,9 @@ form textarea {
     border: 0.2rem solid #ccc;
     border-radius: 0.8rem;
     outline: none;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
+    background-color: var(--bg-color); /* Atualizado para mudar no tema escuro */
+    color: var(--text-color); /* Atualizado para mudar no tema escuro */
 }
 
 form input:focus,
@@ -423,6 +439,7 @@ form button {
 
 form button:hover {
     transform: scale(1.03);
+    background-color: #6a11cb;
 }
 
 /* ------- FOOTER SECTION ------- */
